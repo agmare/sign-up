@@ -1,0 +1,111 @@
+body {
+  background-color: #17191c;
+  color: #fff;
+  font-family: "Bold";
+  box-sizing: content-box;
+}
+#MainDiv {
+  height: 500px;
+  width: 806px;
+  margin: auto;
+}
+.Display {
+  display: inline-block;
+  width: 360px;
+  padding-left: 40px;
+  text-align: left;
+}
+.size {
+  width: 300px;
+  height: 25px;
+  border-radius: 7px;
+  background-color: transparent;
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.size::placeholder {
+  color: aliceblue;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+#Sign-Up {
+  padding-left: 40px;
+}
+#Btn {
+  border-radius: 7px;
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
+  color: #04aa6d;
+  border-color: #04aa6d;
+}
+#BtnDiv {
+  padding-left: 40px;
+}
+#Btn:hover {
+  border-color: #04aa6d;
+  background-color: #04aa6d;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 56px 0px rgba(4, 170, 109, 1);
+  -moz-box-shadow: 0px 0px 56px 0px rgba(4, 170, 109, 1);
+  box-shadow: 0px 0px 56px 0px rgba(4, 170, 109, 1);
+}
+.success {
+  color: green;
+  border: 1px solid green;
+}
+.error {
+  color: red;
+  border: 1px solid red;
+}
+#Result {
+  display: inline-block;
+  margin-top: 37.5px;
+}
+#ResultDiv {
+  width: 360px;
+  height: 100px;
+  border-radius: 7px;
+  visibility: hidden;
+  margin-left: 40px;
+  margin-top: 25px;
+}
+#consoleDiv{
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+.mg1 {
+  margin-left: 75.125px;
+}
+
+.mg2 {
+  margin-left: 76.6165px;
+}
+
+.mg3 {
+  margin-left: 59.925px;
+}
+
+.mg4 {
+  margin-left: 73.725px;
+}
+
+.mg5 {
+  margin-left: 56.625px;
+}
+
+.mg6 {
+  margin-left: 70.175px;
+}
+
+.mg7 {
+  margin-left: 144.18335px;
+}

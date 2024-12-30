@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Bold";
+    font-weight: normal;
+    src: url(Bold/EnNum.eot) format("eot"), 
+         url(Bold/EnNum.otf) format("otf"),
+         url(Bold/EnNum.svg) format("svg"),
+         url(Bold/EnNum.ttf) format("ttf"),
+         url(Bold/EnNum.woff) format("woff"),
+         url(Bold/EnNum.woff2) format("woff2");
+}
+@font-face {
+    font-family: "Light";
+    font-weight: normal;
+    src: url(Light/FaNum.eot) format("eot"),
+         url(Light/FaNum.otf) format("otf"),
+         url(Light/FaNum.svg) format("svg"),
+         url(Light/FaNum.eot) format("ttf"),
+         url(Light/FaNum.woff) format("woff"),
+         url(Light/FaNum.woff2) format("woff2");
+}
+@font-face {
+    font-family: "Medium";
+    font-weight: normal;
+    src: url(Medium/FaNum.eot) format("eot"),
+         url(Medium/FaNum.otf) format("otf"),
+         url(Medium/FaNum.svg) format("svg"),
+         url(Medium/FaNum.ttf) format("ttf"),
+         url(Medium/FaNum.woff) format("woff"),
+         url(Medium/FaNum.woff2) format("woff2");
+}
+@font-face {
+    font-family: "Regular";
+    font-weight: normal;
+    src: url(Regular/EnNum.eot) format("eot"), 
+         url(Regular/EnNum.otf) format("otf"),
+         url(Regular/EnNum.svg) format("svg"),
+         url(Regular/EnNum.ttf) format("ttf"),
+         url(Regular/EnNum.woff) format("woff"),
+         url(Regular/EnNum.woff2) format("woff2");
+}
+@font-face {
+    font-family: "Ultra-Light";
+    font-weight: normal;
+    src: url(Ultra-Light/FaNum.eot) format("eot"),
+         url(Ultra-Light/FaNum.otf) format("otf"),
+         url(Ultra-Light/FaNum.svg) format("svg"),
+         url(Ultra-Light/FaNum.ttf) format("ttf"),
+         url(Ultra-Light/FaNum.woff) format("woff"),
+         url(Ultra-Light/FaNum.woff2) format("woff2");
+}

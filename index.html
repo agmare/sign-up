@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-Up Page</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="Font/IranSans/Sans.css" />
+
+    <script>
+      function checkPhoneNumber(phoneNumber) {
+        const prefix = "09";
+        return phoneNumber.startsWith(prefix);
+      }
+
+      function checkform() {
+        var fnv = document.getElementById("FirstNametb").value;
+        var lnv = document.getElementById("LastNametb").value;
+        var pnv = document.getElementById("PhoneNumbertb").value;
+        var idv = document.getElementById("ID-CartNumbertb").value;
+        var resultDiv = document.getElementById("ResultDiv");
+        var resultElement = document.getElementById("Result");
+        document.getElementById("ResultDiv").style.visibility = "visible";
+
+        if (fnv.length == 0) {
+          resultElement.innerHTML = "Please enter your first name.";
+          resultElement.className = "mg1";
+          resultDiv.className = "error";
+          return false;
+        } else if (lnv.length == 0) {
+          resultElement.innerHTML = "Please enter your last name.";
+          resultElement.className = "mg2";
+          resultDiv.className = "error";
+          return false;
+        } else if (pnv.length == 0) {
+          resultElement.innerHTML = "Please enter your phone number.";
+          resultElement.className = "mg3";
+          resultDiv.className = "error";
+          return false;
+        } else if (!checkPhoneNumber(pnv) || pnv.length !== 11) {
+          resultElement.innerHTML = "Your phone number is wrong!";
+          resultElement.className = "mg4";
+          resultDiv.className = "error";
+          return false;
+        } else if (idv.length == 0) {
+          resultElement.innerHTML = "Please enter your id-card number.";
+          resultElement.className = "mg5";
+          resultDiv.className = "error";
+          return false;
+        } else if (!checkCodeMeli(idv)) {
+          resultElement.innerHTML = "Your id-card number is wrong.";
+          resultElement.className = "mg6";
+          resultDiv.className = "error";
+          return false;
+        } else {
+          resultElement.innerHTML = "Complete!";
+          resultElement.className = "mg7";
+          resultDiv.className = "success";
+          return true;
+        }
+      }
+
+
+      function saveData() {
+        if (!checkform()) { // If checkform returns false
+          console.log("Form isn't complete");
+        } else {
+          var fnv = document.getElementById("FirstNametb").value;
+          var lnv = document.getElementById("LastNametb").value;
+          var pnv = document.getElementById("PhoneNumbertb").value;
+          var idv = document.getElementById("ID-CartNumbertb").value;
+
+          // Save to localStorage
+          localStorage.setItem("FirstName", fnv);
+          localStorage.setItem("LastName", lnv);
+          localStorage.setItem("PhoneNumber", pnv);
+          localStorage.setItem("IDCardNumber", idv);
+
+          // Print data to the console
+          console.log("First Name:", fnv);
+          console.log("Last Name:", lnv);
+          console.log("Phone Number:", pnv);
+          console.log("ID Card Number:", idv);
+          console.log(" ");
+        }
+      }
+
+
+      function checkCodeMeli(code) {
+        var L = code.length;
+        if (L < 8 || parseInt(code, 10) == 0) return false;
+        code = ("0000" + code).substr(L + 4 - 10);
+        if (parseInt(code.substr(3, 6), 10) == 0) return false;
+        var idv = parseInt(code.substr(9, 1), 10);
+        var s = 0;
+        for (var i = 0; i < 9; i++)
+          s += parseInt(code.substr(i, 1), 10) * (10 - i);
+        s = s % 11;
+        return (s < 2 && idv == s) || (s >= 2 && idv == 11 - s);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="MainDiv">
+      <p id="Sign-Up">Sign-Up</p>
+      <div>
+        <div id="FNTBDiv" class="Display">
+          <label for="FirstNametb">First Name</label>
+          <br />
+          <input
+            type="text"
+            id="FirstNametb"
+            class="size"
+            placeholder="John"
+          />
+        </div>
+        <div id="LNTBDiv" class="Display">
+          <label for="LastNametb">Last Name</label>
+          <br />
+          <input
+            type="text"
+            id="LastNametb"
+            class="size"
+            placeholder="Brown"
+          />
+        </div>
+        <br />
+        <br />
+        <div id="PNTBDiv" class="Display">
+          <label for="PhoneNumbertb">Phone Number</label>
+          <br />
+          <input
+            type="text"
+            placeholder="0912-345-6789"
+            class="size"
+            id="PhoneNumbertb"
+            minlength="11"
+            maxlength="11"
+          />
+        </div>
+        <div id="IDCNTBDiv" class="Display">
+          <label for="ID-CartNumbertb">ID-Card Number</label>
+          <br />
+          <input
+            type="text"
+            id="ID-CartNumbertb"
+            class="size"
+            placeholder="012-3456789"
+            maxlength="10"
+          />
+        </div>
+      </div>
+      <br />
+      <div id="BtnDiv">
+        <input type="button" value="Sign-Up" id="Btn" onclick="checkform(), saveData()" />
+      </div>
+      <div id="ResultDiv">
+        <span id="Result"></span>
+      </div>
+    </div>
+    <div onclick="checkform()" id="consoleDiv"></div>
+  </body>
+</html>
